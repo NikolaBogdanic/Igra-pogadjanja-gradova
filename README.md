@@ -1,2 +1,4 @@
-# Igra-pogadjanja-gradova
-Igra pogadjanja gradova
+# City guessing game
+
+
+
