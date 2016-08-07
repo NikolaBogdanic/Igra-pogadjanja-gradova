@@ -6,7 +6,7 @@ All data that is necessary for the operation of the game is stored in the **JSON
 
 This data includes: region, list of cities, list of correct cities and available time for completion of the game.
 
-The game is made using **pure JavaScript**.
+The game was made using **pure JavaScript**.
 
 ###[Demo](http://igra.byethost5.com/)
 
