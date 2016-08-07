@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Rezultat</title>
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<meta name="viewport" content="user-scalable=no, initial-scale = 1, width=device-width">
+	<link rel="stylesheet" href="css/auto-complete.css">
+	<link rel="stylesheet" href="css/style.css">
+	<link href="https://fonts.googleapis.com/css?family=Open+Sans:400" rel="stylesheet" type="text/css">
+</head>
+
+<body>
+	<div id="left-side">
+		<div id="success-rate">Ukupno tačnih: </div>
+		<div id="success-meter-container">
+			<div id="success-meter"></div>
+		</div>
+		<div id="success-percentage-container">
+			<div id="success-percentage"></p>
+		</div>
+	</div>
+
+	<script>
+		var success_rate = sessionStorage.success_rate; // Izvlačenje podatka o procentu tačnih gradova iz sessionStorage-a
+		if (isNaN(success_rate)) {
+			success_rate = 0;
+		}
+		var success_rate_div = document.getElementById("success-rate");
+		success_rate_div.innerHTML =  success_rate_div.innerHTML + success_rate + "%"; // Smeštanje procenta tačnih gradova u success-rate div
+		var success_meter_div = document.getElementById("success-meter");
+		var success_percentage_container_div = document.getElementById("success-percentage-container");
+		var success_percentage_div = document.getElementById("success-percentage");
+		success_percentage_div.innerHTML = "0%"; // Smeštanje procenta tačnih gradova u success-percentage div
+		// Animacija
+		function fillBar(success_rate) {
+			var progress = 0; // Trenutna popunjenost bara u procentima
+			var fill_to = success_rate; // Ciljana popunjenost bara u procentima
+			// Ažuriranje parametara
+			function updateParemeters() {
+				progress++; 
+				success_meter_div.style.width = progress + "%"; // Širina success-meter div-a
+				success_percentage_container_div.style.paddingLeft = progress + "%"; // padding-left parametar div-a success-percentage-container
+				if (fill_to!=0) {
+					success_percentage_div.innerHTML = progress + "%"; // Smeštanje procenta tačnih gradova u success-percentage div
+				}
+				if ((progress == fill_to) || (fill_to == 0)) { // Uslov za završetak animacije
+					clearInterval(id); // Zaustavljanje animacije
+				}
+			}
+			var id = setInterval(updateParemeters, 100) // Ažuriranje svakih 100ms
+		}
+
+		fillBar(success_rate);
+	</script>
+
+</body>
+</html>
