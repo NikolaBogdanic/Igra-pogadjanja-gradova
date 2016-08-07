@@ -8,7 +8,7 @@ This data includes: region, list of cities, list of correct cities and available
 
 The game is made using **pure JavaScript**.
 
-###[Demo](http://http://igra.byethost5.com//)
+###[Demo](http://igra.byethost5.com/)
 
 
 
