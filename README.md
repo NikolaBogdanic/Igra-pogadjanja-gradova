@@ -8,7 +8,7 @@ This data includes: region, list of cities, list of correct cities and available
 
 The game was made using **pure JavaScript**.
 
-###[Demo](http://igra.byethost5.com/)
+**[Demo](http://guessthecity.byethost16.com/)**
 
 
 
